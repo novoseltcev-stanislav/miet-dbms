@@ -83,6 +83,7 @@ INSERT INTO parts (
 
 -- customers
 INSERT INTO customers (
+  company,
   address_id,
   phone_id,
   fax_id,
@@ -90,6 +91,7 @@ INSERT INTO customers (
   contact,
   last_invoice_date
 ) VALUES (
+  'Bdfdsfs',
   1, 4, 1,
   20, 
   '{"msg": "None"}'::jsonb,

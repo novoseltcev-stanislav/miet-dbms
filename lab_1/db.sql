@@ -107,7 +107,8 @@ ALTER TABLE public.addresses OWNER TO postgres;
 -- DROP TABLE IF EXISTS public.customers CASCADE;
 CREATE TABLE public.customers (
 	id bigint NOT NULL GENERATED ALWAYS AS IDENTITY ,
-	address_id bigint,
+    company VARCHAR(100) NOT NULL,
+    address_id bigint,
 	fax_id bigint,
 	phone_id smallint,
 	tax_rate float NOT NULL,
