@@ -51,7 +51,6 @@ UPDATE customers
 
 
 INSERT INTO customers (
-    id, 
     address_id, 
     fax_id, 
     phone_id, 
@@ -60,7 +59,6 @@ INSERT INTO customers (
     last_invoice_date, 
     company
 ) VALUES (
-    8191108, 
     2, 2, 2,
     20,'{"msg":"None"}'::jsonb, 
     now(), 'Company'
