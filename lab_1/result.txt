@@ -1,0 +1,139 @@
+miet_lab1=# \i db.sql 
+psql:db.sql:1: ERROR:  database "miet_lab1" already exists
+CREATE TABLE
+ALTER TABLE
+CREATE TABLE
+COMMENT
+COMMENT
+ALTER TABLE
+CREATE TABLE
+COMMENT
+ALTER TABLE
+CREATE TABLE
+ALTER TABLE
+CREATE TABLE
+ALTER TABLE
+CREATE TABLE
+COMMENT
+ALTER TABLE
+\CREATE TABLE
+ALTER TABLE
+CREATE TABLE
+ALTER TABLE
+CREATE TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+miet_lab1=# \i fill.sql 
+INSERT 0 4
+INSERT 0 3
+INSERT 0 3
+INSERT 0 3
+INSERT 0 2
+INSERT 0 1
+INSERT 0 2
+INSERT 0 2
+INSERT 0 3
+miet_lab1=# \i requests.sql 
+ id | company | address_id | fax_id | phone_id | tax_rate |     contact     | last_invoice_date 
+----+---------+------------+--------+----------+----------+-----------------+-------------------
+  1 | Bdfdsfs |          1 |      1 |        4 |       20 | {"msg": "None"} | 2022-02-08
+(1 row)
+
+ company |  city  
+---------+--------
+ Bdfdsfs | Moscow
+(1 row)
+
+ company |  city  
+---------+--------
+ Bdfdsfs | Moscow
+(1 row)
+
+ id | company | address_id | fax_id | phone_id | tax_rate | contact | last_invoice_date | id | billing_address | shipping_address | city | zip | country 
+----+---------+------------+--------+----------+----------+---------+-------------------+----+-----------------+------------------+------+-----+---------
+(0 rows)
+
+ id | company | address_id | fax_id | phone_id | tax_rate | contact | last_invoice_date | id | billing_address | shipping_address | city | zip | country 
+----+---------+------------+--------+----------+----------+---------+-------------------+----+-----------------+------------------+------+-----+---------
+(0 rows)
+
+ id | company | address_id | fax_id | phone_id | tax_rate | contact | last_invoice_date | id | customer_id | address_id | employee_id | payment_method | items_total | tax_rate | freight | amount_paid | created_at
+ | shipped_at 
+----+---------+------------+--------+----------+----------+---------+-------------------+----+-------------+------------+-------------+----------------+-------------+----------+---------+-------------+-----------
+-+------------
+(0 rows)
+
+ id | company | address_id | fax_id | phone_id | tax_rate |     contact     | last_invoice_date 
+----+---------+------------+--------+----------+----------+-----------------+-------------------
+  1 | Bdfdsfs |          1 |      1 |        4 |       20 | {"msg": "None"} | 2022-02-08
+(1 row)
+
+ id | company | address_id | fax_id | phone_id | tax_rate | contact | last_invoice_date | id | blling_address | shipping_address | city | zip | country 
+----+---------+------------+--------+----------+----------+---------+-------------------+----+-----------------+------------------+------+-----+---------
+(0 rows)
+
+ company | ?column? 
+---------+----------
+ Bdfdsfs |     20.4
+(1 row)
+
+ count 
+-------
+     1
+(1 row)
+
+UPDATE 1
+INSERT 0 1
+DELETE 1
+ id | customer_id | address_id | employee_id | payment_method | items_total | tax_rate | freight | amount_paid | created_at | shipped_at | id | company | address_id | fax_id | phone_id | tax_rate | contact | last
+_invoice_date 
+----+-------------+------------+-------------+----------------+-------------+----------+---------+-------------+------------+------------+----+---------+------------+--------+----------+----------+---------+-----
+--------------
+(0 rows)
+
+ company | last_name | name 
+---------+-----------+------
+(0 rows)
+
+ company | description 
+---------+-------------
+(0 rows)
+
+ description | cost | company 
+-------------+------+---------
+(0 rows)
+
+miet_lab1=# \d
+                List of relations
+ Schema |       Name       |   Type   |  Owner   
+--------+------------------+----------+----------
+ public | addresses        | table    | postgres
+ public | addresses_id_seq | sequence | postgres
+ public | customers        | table    | postgres
+ public | customers_id_seq | sequence | postgres
+ public | employees        | table    | postgres
+ public | employees_id_seq | sequence | postgres
+ public | faxes            | table    | postgres
+ public | faxes_id_seq     | sequence | postgres
+ public | items            | table    | postgres
+ public | items_id_seq     | sequence | postgres
+ public | orders           | table    | postgres
+ public | orders_id_seq    | sequence | postgres
+ public | parts            | table    | postgres
+ public | parts_id_seq     | sequence | postgres
+ public | phones           | table    | postgres
+ public | phones_id_seq    | sequence | postgres
+ public | vendors          | table    | postgres
+ public | vendors_id_seq   | sequence | postgres
+(18 rows)
