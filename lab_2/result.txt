@@ -1,0 +1,29 @@
+miet_lab2=# \i db.sql 
+
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+
+miet_lab2=# \i fill.sql 
+
+INSERT 0 201
+INSERT 0 1000
+INSERT 0 101
+INSERT 0 1000
+INSERT 0 1000
+INSERT 0 1000
+INSERT 0 1000
+
+miet_lab2=# \d+
+                                            List of relations
+ Schema |           Name           |   Type   |      Owner       | Persistence |    Size    | 
+--------+--------------------------+----------+------------------+-------------+------------|
+ public | medical_procedure        | table    | st-a-novoseltcev | permanent   | 48 kB      | 
+ public | medical_procedure_id_seq | sequence | st-a-novoseltcev | permanent   | 8192 bytes | 
+ public | patient                  | table    | st-a-novoseltcev | permanent   | 176 kB     | 
+ public | patient_id_seq           | sequence | st-a-novoseltcev | permanent   | 8192 bytes | 
+ public | patient_procedure        | table    | st-a-novoseltcev | permanent   | 296 kB     | 
+ public | room                     | table    | st-a-novoseltcev | permanent   | 40 kB      | 
+ public | room_id_seq              | sequence | st-a-novoseltcev | permanent   | 8192 bytes | 
+(7 rows)

@@ -31,6 +31,9 @@ CREATE TABLE public.medical_procedure (
 CREATE TABLE public.patient_procedure (
     patient_id bigint NOT NULL,
     medical_procedure_id bigint NOT NULL,
+    duration interval NULL,
+    assigned_quantity smallint NOT NULL CHECK (assigned_quantity > 0),
+    completed_quantity smallint NOT NULL DEFAULT 0 CHECK (completed_quantity >= 0),
 
     CONSTRAINT patient_procedure_pk PRIMARY KEY (patient_id, medical_procedure_id),
     CONSTRAINT patient_procedure_fk_patient_id FOREIGN KEY (patient_id)
