@@ -1,0 +1,34 @@
+<section class="page admin-page" loader *ngIf="rows | async as row">
+  <nz-table #ev [nzData]="$any(row)" [nzShowPagination]="false">
+    <thead>
+    <tr>
+      <th>Id</th>
+      <th>RoomId</th>
+      <th>Name</th>
+      <th>Surname</th>
+      <th>Patronymic</th>
+      <th>Birthday</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let data of ev.data">
+      <td>{{ data?.id }}</td>
+      <td>{{ data?.room_id}}</td>
+      <td>{{ data?.name }}</td>
+      <td>{{ data?.surname }}</td>
+      <td>{{ data?.patronymic }}</td>
+      <td>{{ data?.birthday | date : 'short' }}</td>
+      <td>
+        <div>
+          <a (click)="deleteEvent(data?.id)">
+            <i class="admin_icons" nz-icon nzType="delete" nzTheme="outline"></i>
+          </a>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </nz-table>
+  <div class="pagination-wrapper">
+    <nz-pagination (nzPageIndexChange)="onChangePage($event)" [nzPageIndex]="activePage" [nzTotal]="page"></nz-pagination>
+  </div>
+</section>
