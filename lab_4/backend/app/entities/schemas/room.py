@@ -1,9 +1,8 @@
-from app.db import db
+from marshmallow import Schema, fields
+from marshmallow.validate import Length
 
 
-class Room(db.Model):
-    __tablename__ = 'room'
-
-    id = db.Column(db.Integer, primary_key=True)
-    number = db.Column(db.String(32))
-    capacity = db.Column(db.Integer, nullable=True)
+class RoomSchema(Schema):
+    id = fields.Integer(required=True)
+    number = fields.String(required=True, validation=Length(max=32))
+    capacity = fields.Integer(required=False, allow_none=True)

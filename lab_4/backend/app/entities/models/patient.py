@@ -1,7 +1,7 @@
 from app.db import db
 
 
-class Patient(db.Model):
+class PatientModel(db.Model):
     __tablename__ = 'patient'
 
     id = db.Column(db.Integer, primary_key=True)

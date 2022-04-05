@@ -1,9 +1,9 @@
-from app.db import db
+from marshmallow import Schema, fields
+from marshmallow.validate import Length
 
 
-class Procedure(db.Model):
-    __tablename__ = 'medical_procedure'
-
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(256))
-    description = db.Column(db.Text, nullable=True)
+class ProcedureSchema(Schema):
+    id = fields.Integer(required=True)
+    room_id = fields.Integer(required=True)
+    name = fields.String(required=True, validation=Length(max=256))
+    description = fields.String(required=False, allow_none=True)

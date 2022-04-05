@@ -1,7 +1,7 @@
 from app.db import db
 
 
-class Room(db.Model):
+class RoomModel(db.Model):
     __tablename__ = 'room'
 
     id = db.Column(db.Integer, primary_key=True)

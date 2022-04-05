@@ -1,12 +1,11 @@
-from app.db import db
+from marshmallow import Schema, fields
+from marshmallow.validate import Length
 
 
-class Patient(db.Model):
-    __tablename__ = 'patient'
-
-    id = db.Column(db.Integer, primary_key=True)
-    room_id = db.Column(db.Integer, db.ForeignKey('room.id'))
-    name = db.Column(db.String(50))
-    surname = db.Column(db.String(50))
-    patronymic = db.Column(db.String(50), nullable=True)
-    birthday = db.Column(db.Date)
+class PatientSchema(Schema):
+    id = fields.Integer(required=True)
+    room_id = fields.Integer(required=True)
+    name = fields.String(required=True, validation=Length(max=50))
+    surname = fields.String(required=True, validation=Length(max=50))
+    patronymic = fields.String(required=False, validation=Length(max=50))
+    birthday = fields.Date(required=True)
