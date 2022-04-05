@@ -18,13 +18,14 @@ class Controller(MethodView):
         self.service = Service(model)
         super(Controller, self).__init__()
 
-    def get(self, patient_id: int = None):
-        if patient_id:
-            return self._get_entity_by_id(patient_id), 200
+    def get(self, id: int = None):
+        print(f'{id=}')
+        if id:
+            return self._get_entity_by_id(id), 200
         return self._get_all(), 200
 
-    def _get_entity_by_id(self, patient_id: int):
-        activity = self.service.get_by_id(patient_id)
+    def _get_entity_by_id(self, id: int):
+        activity = self.service.get_by_id(id)
         return jsonify(self.schema().dump(activity))
 
     def _get_all(self):
@@ -37,14 +38,14 @@ class Controller(MethodView):
         patient_id = self.service.create(data)
         return jsonify(patient_id=patient_id), 201
 
-    def put(self, activity_id: int):
+    def put(self, id: int):
         view_data = request.json
-        view_data['id'] = activity_id
+        view_data['id'] = id
         data = PageSchema(unknown='EXCLUDE').load(view_data)
         self.service.update(data)
         return jsonify(), 204
 
-    def delete(self, activity_id: int):
-        data = self.schema(only=('id',)).load({'id': activity_id})
+    def delete(self, id: int):
+        data = self.schema(only=('id',)).load({'id': id})
         self.service.delete(data['id'])
         return jsonify(), 204
