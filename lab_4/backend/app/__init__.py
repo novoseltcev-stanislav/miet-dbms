@@ -22,15 +22,10 @@ def create_app() -> Flask:
 
     app.config.from_mapping(
         DEBUG=strtobool(environ.get('DEBUG')),
-
         SQLALCHEMY_DATABASE_URI=environ.get('SQLALCHEMY_DATABASE_URI'),
         SQLALCHEMY_TRACK_MODIFICATIONS=strtobool(environ.get('SQLALCHEMY_TRACK_MODIFICATIONS')),
-
         SECRET_KEY=environ.get('SECRET_KEY'),
         PAGE_LENGTH=10,
-
-        TMP_FILE_PATH=environ.get('TMP_FILE_PATH'),
-        PERMANENT_FILE_PATH=environ.get('PERMANENT_FILE_PATH')
     )
 
     app.app_context().push()
