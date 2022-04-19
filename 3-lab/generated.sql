@@ -53,26 +53,26 @@ CREATE TABLE public.medical_procedure (
 ALTER TABLE public.medical_procedure OWNER TO postgres;
 -- ddl-end --
 
--- object: public.many_medical_procedure_has_many_room | type: TABLE --
--- DROP TABLE IF EXISTS public.many_medical_procedure_has_many_room CASCADE;
-CREATE TABLE public.many_medical_procedure_has_many_room (
+-- object: public.many_medical_procedure_has_many_patient | type: TABLE --
+-- DROP TABLE IF EXISTS public.many_medical_procedure_has_many_patient CASCADE;
+CREATE TABLE public.many_medical_procedure_has_many_patient (
 	id_medical_procedure bigint NOT NULL,
-	id_room bigint NOT NULL,
-	CONSTRAINT many_medical_procedure_has_many_room_pk PRIMARY KEY (id_medical_procedure,id_room)
+	id_patient bigint NOT NULL,
+	CONSTRAINT many_medical_procedure_has_many_patient_pk PRIMARY KEY (id_medical_procedure,id_patient)
 );
 -- ddl-end --
 
 -- object: medical_procedure_fk | type: CONSTRAINT --
--- ALTER TABLE public.many_medical_procedure_has_many_room DROP CONSTRAINT IF EXISTS medical_procedure_fk CASCADE;
-ALTER TABLE public.many_medical_procedure_has_many_room ADD CONSTRAINT medical_procedure_fk FOREIGN KEY (id_medical_procedure)
+-- ALTER TABLE public.many_medical_procedure_has_many_patient DROP CONSTRAINT IF EXISTS medical_procedure_fk CASCADE;
+ALTER TABLE public.many_medical_procedure_has_many_patient ADD CONSTRAINT medical_procedure_fk FOREIGN KEY (id_medical_procedure)
 REFERENCES public.medical_procedure (id) MATCH FULL
 ON DELETE RESTRICT ON UPDATE CASCADE;
 -- ddl-end --
 
--- object: room_fk | type: CONSTRAINT --
--- ALTER TABLE public.many_medical_procedure_has_many_room DROP CONSTRAINT IF EXISTS room_fk CASCADE;
-ALTER TABLE public.many_medical_procedure_has_many_room ADD CONSTRAINT room_fk FOREIGN KEY (id_room)
-REFERENCES public.room (id) MATCH FULL
+-- object: patient_fk | type: CONSTRAINT --
+-- ALTER TABLE public.many_medical_procedure_has_many_patient DROP CONSTRAINT IF EXISTS patient_fk CASCADE;
+ALTER TABLE public.many_medical_procedure_has_many_patient ADD CONSTRAINT patient_fk FOREIGN KEY (id_patient)
+REFERENCES public.patient (id) MATCH FULL
 ON DELETE RESTRICT ON UPDATE CASCADE;
 -- ddl-end --
 
