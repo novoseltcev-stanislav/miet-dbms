@@ -1,0 +1,57 @@
+miet_lab2=# \i alter.sql
+ALTER TABLE
+UPDATE 1000
+ALTER TABLE
+
+miet_lab2=# \i trigger.sql
+CREATE FUNCTION
+CREATE TRIGGER
+CREATE FUNCTION
+CREATE TRIGGER
+CREATE FUNCTION
+CREATE TRIGGER
+
+miet_lab2=# \i test.sql
+SELECT 1
+SELECT 4
+ n_procedures
+--------------
+            4
+(1 row)
+
+INSERT 0 1
+ n_procedures
+--------------
+            5
+(1 row)
+
+DELETE 1
+ n_procedures
+--------------
+            4
+(1 row)
+
+ patient_id | medical_procedure_id | duration | assigned_quantity | completed_quantity
+------------+----------------------+----------+-------------------+--------------------
+          1 |                    6 | 00:24:00 |                 1 |                  0
+          1 |                   37 | 00:25:00 |                 5 |                  0
+          1 |                   63 | 00:31:00 |                 4 |                  0
+          1 |                   92 | 00:41:00 |                 4 |                  0
+(4 rows)
+
+DELETE 1
+ patient_id | medical_procedure_id | duration | assigned_quantity | completed_quantity
+------------+----------------------+----------+-------------------+--------------------
+(0 rows)
+
+ALTER TABLE
+ALTER TABLE
+INSERT 0 1
+UPDATE 1
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+INSERT 0 4
+ALTER TABLE
+DROP TABLE
+DROP TABLE
