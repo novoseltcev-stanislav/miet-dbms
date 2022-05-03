@@ -11,4 +11,4 @@ UPDATE public.patient
     WHERE id = patient_id;
 
 ALTER TABLE public.patient
-    ALTER COLUMN n_procedures TYPE int;
+    ALTER COLUMN n_procedures SET NOT NULL;
